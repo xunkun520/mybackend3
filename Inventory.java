@@ -83,10 +83,10 @@ public class Inventory {
 
         return space;
     }
-    public void removeItem(String itemName, int amountToRemove){
+     public void removeItem(String itemName, int amountToRemove){
         for(int j=0;j<items.size();j++){
             if(items.get(j).getItem().getName().equals(itemName)){
-                if(items.get(j).getQuantity()>=amountToRemove){
+                if(items.get(j).getQuantity()>amountToRemove){
                     items.get(j).setQuantity(items.get(j).getQuantity()-amountToRemove);
                     amountToRemove = 0;
                 }else{
@@ -118,13 +118,13 @@ public class Inventory {
         for (int i = 0; i < items.size(); i++) {
             ItemStack check = items.get(i);
             if (check.getItem() == null) {
-                System.out.print("格子" + (i + 1) + "：空"+"\t");
+                System.out.print("格子" + (i + 1) + "：空 "+"\t");
                 space++;
                 if((i+1)%6==0){
                     System.out.println();
                 }
             } else {
-                System.out.print("格子" +(i+1)+"："+ check.getItem().getName()+" × "+check.getQuantity()+"\t"
+                System.out.print("格子"+(i+1)+"："+ check.getItem().getName()+"×"+check.getQuantity()+"\t"
                 );
                 if((i+1)%6==0){
                     System.out.println();
@@ -138,3 +138,4 @@ public class Inventory {
         }
     }
     }
+
