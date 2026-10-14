@@ -14,25 +14,35 @@ public class Item {
     name（String）：物品名称，分别有三类物品，石头、木板、钻石剑。
     maxStackSize（int）：物品的最大堆叠数量，石头、木板、钻石剑的最大堆叠数量分别为 64、64、1。
      */
-private String name;
-private int maxStackSize;
-public Item(String name, int maxStackSize) {
-    this.name = name;
-    this.maxStackSize = maxStackSize;
-}
-public String getName() {
-    return name;
-}
-public int getMaxStackSize() {
-    return maxStackSize;
-}
-public void setName(String name) {
-    this.name = name;
-}
-public void setMaxStackSize(int maxStackSize) {
-    this.maxStackSize = maxStackSize;
-}
+    private String name;
+    private int maxStackSize;
 
+    public Item(String name, int maxStackSize) {
+        this.name = name;
+        this.maxStackSize = maxStackSize;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMaxStackSize() {
+        return maxStackSize;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMaxStackSize(int maxStackSize) {
+        if (maxStackSize <= 0) {
+            System.out.println("最大堆叠数量必须大于0");
+        } else {
+            this.maxStackSize = maxStackSize;
+        }
+
+    }
+}
 
 
 
